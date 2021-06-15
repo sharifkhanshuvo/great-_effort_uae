@@ -14,8 +14,8 @@ def home(request):
 
 
     data ={
-        'hero':Hero,
-        'about':About,
+        'hero':Hero[0],
+        'about':About[0],
         'services':Services,
         'advantages':Advantages,
         'works':Works,

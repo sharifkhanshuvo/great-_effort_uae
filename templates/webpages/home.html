@@ -35,7 +35,6 @@ height: 80vh;
   <!-- ======= about us ======== -->
   <div id="about" class="container pt-5">
     <div class="row d-flex justify-content-between align-items-center ">
-      {% for a in about|slice:":1" %}
       <div class="col-md-6">
         <img src='{{ about.photo.url }}'  width="100%" alt="">
         
@@ -52,9 +51,6 @@ height: 80vh;
       </p>
         <a href="{% url 'about' %}" class="btn btn-lg " style="background: #6C63FF;color: #fff;">More About us</a>
       </div>
-      {% endfor %}
-
-     
     </div>
   </div>
 
