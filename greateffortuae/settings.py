@@ -27,8 +27,7 @@ SECRET_KEY = 'django-insecure-27#@zt$3a@73-k*4yl@@ef7ww83r)jiupgo^gh4-v_09pl3xfr
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'greateffortuae.herokuapp.com',
-    'greateffortuae.com'
+    '*'
 ]
 
 
@@ -89,14 +88,21 @@ env = environ.Env()
 # reading .env file
 environ.Env.read_env()
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': env('POSTGRES_DB_NAME'),
+#         'USER': env('POSTGRES_USER'),
+#         'PASSWORD': env('POSTGRES_PASSWORD'),
+#         'HOST': env('POSTGRES_HOST'),
+#         'PORT': env('POSTGRES_PORT'),
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env('POSTGRES_DB_NAME'),
-        'USER': env('POSTGRES_USER'),
-        'PASSWORD': env('POSTGRES_PASSWORD'),
-        'HOST': env('POSTGRES_HOST'),
-        'PORT': env('POSTGRES_PORT'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
