@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import environ
+
+env = environ.Env()
+# reading .env file
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-27#@zt$3a@73-k*4yl@@ef7ww83r)jiupgo^gh4-v_09pl3xfr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     '*'
@@ -81,12 +86,6 @@ WSGI_APPLICATION = 'greateffortuae.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-import os
-import environ
-
-env = environ.Env()
-# reading .env file
-environ.Env.read_env()
 
 
 # ====== for production
@@ -104,7 +103,9 @@ DATABASES = {
 
 
 
-#  ======= for local ev =====
+
+
+#  ======= for local dev =====
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
