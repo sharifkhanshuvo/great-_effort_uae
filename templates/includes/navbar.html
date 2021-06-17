@@ -1,44 +1,34 @@
 {% load static %}
 
 
-   <nav class="navbar navabar_bg  navbar-expand-lg navbar-light " >
+<div class="nav-bar">
   <div class="container-fluid">
-    <a class="navbar-brand ms-5 flex-grow-1" href="{% url 'home' %}">
-        Great Effort UAE
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav d-flex align-items-center ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link " href="{% url 'home' %}">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'about' %}">About</a>
-        </li>
-      
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'services' %}">Services</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'projects' %}">Projects</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'team' %}">Team</a>
-      </li>
-        <li class="nav-item">
-          <a class="nav-link" href="mailto:fahimalif077@gmail.com"> 
-             <button class="btn " style="background: #6C63FF;color: #fff;">
-            Contact us
-            </button>
-            </a>
-      
-        </li>
-      
-      </ul>
-      
-    </div>
+      <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+          <a href="#" class="navbar-brand">MENU</a>
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+              <div class="navbar-nav mr-auto">
+                  <a href="{% url 'home' %}" class="nav-item nav-link active">Home</a>
+                  <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+                  <a href="{% url 'services' %}"  class="nav-item nav-link">Service</a>
+                  <a href="{% url 'team' %}" class="nav-item nav-link">Team</a>
+                  <a href="{% url 'portfolio' %}" class="nav-item nav-link">Project</a>
+                  <!-- <div class="nav-item dropdown">
+                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                      <div class="dropdown-menu">
+                          <a href="blog.html" class="dropdown-item">Blog Page</a>
+                          <a href="single.html" class="dropdown-item">Single Page</a>
+                      </div>
+                  </div> -->
+                  <a href="{% url 'contact' %}"class="nav-item nav-link">Contact</a>
+              </div>
+              <div class="ml-auto">
+                  <a class="btn" href="{% url 'contact' %}" >Get A Quote</a>
+              </div>
+          </div>
+      </nav>
   </div>
-</nav>
+</div>

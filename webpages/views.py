@@ -34,14 +34,14 @@ def about(request):
 
 
 def services(request):
+    return render(request, 'webpages/service.html')
 
-    return render(request, 'webpages/services.html'  )
-
-
-def projects(request):
-    return render(request, 'webpages/projects.html')
-
+def portfolio(request):
+    return render(request, 'webpages/portfolio.html')
 
 
 def team(request):
     return render(request, 'webpages/team.html')
+
+def contact(request):
+    return render(request, 'webpages/contact.html')
