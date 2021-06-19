@@ -1,7 +1,7 @@
 {% load static %}
 
 
-<div class="nav-bar">
+<div class="nav-bar ">
   <div class="container-fluid">
       <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
           <a href="#" class="navbar-brand">MENU</a>
@@ -14,15 +14,15 @@
                   <a href="{% url 'home' %}" class="nav-item nav-link active">Home</a>
                   <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
                   <a href="{% url 'services' %}"  class="nav-item nav-link">Service</a>
-                  <a href="{% url 'team' %}" class="nav-item nav-link">Team</a>
+                  <!-- <a href="{% url 'team' %}" class="nav-item nav-link">Team</a> -->
                   <a href="{% url 'portfolio' %}" class="nav-item nav-link">Project</a>
-                  <!-- <div class="nav-item dropdown">
-                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                  <div class="nav-item dropdown">
+                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Team</a>
                       <div class="dropdown-menu">
-                          <a href="blog.html" class="dropdown-item">Blog Page</a>
-                          <a href="single.html" class="dropdown-item">Single Page</a>
+                          <a href="{% url 'team' %}#administrator" class="dropdown-item">Administrator</a>
+                          <a href="{% url 'team' %}#engineering" class="dropdown-item">Enginerring</a>
                       </div>
-                  </div> -->
+                  </div>
                   <a href="{% url 'contact' %}"class="nav-item nav-link">Contact</a>
               </div>
               <div class="ml-auto">
