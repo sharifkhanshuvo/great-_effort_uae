@@ -80,3 +80,8 @@ def team(request):
 
 def contact(request):
     return render(request, 'webpages/contact.html')
+
+
+
+def blogs(request):
+    return render(request, 'webpages/blogs.html')
