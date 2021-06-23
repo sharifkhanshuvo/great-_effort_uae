@@ -163,9 +163,9 @@ MEDIA_URL = '/images/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME':'dnr7thmcu',
-    'API_KEY':'756167263949472',
-    'API_SECRET':'-jc4HOa_gRY4nhzAYkPdDTAvdrg'
+    'CLOUD_NAME':'soft-array',
+    'API_KEY':'466473932384931',
+    'API_SECRET':'32GpQ5qikoNyk0Sjm55ytqh7HzU'
 }
 
 # Default primary key field type

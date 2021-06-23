@@ -4,27 +4,30 @@
 <div class="about wow fadeInUp" data-wow-delay="0.1s">
     <div class="container">
         <div class="row align-items-center">
+            {% for a in about|slice:":1" %}
             <div class="col-lg-5 col-md-6">
                 <div class="about-img">
-                    <img src="{% static 'img/about.jpg' %}" alt="Image">
+                    <img src="{{ a.photo.url }}" alt="Image">
                 </div>
             </div>
             <div class="col-lg-7 col-md-6">
                 <div class="section-header text-left">
-                    <p>Welcome to Great Effort</p>
-                    <h2>12 Years Experience</h2>
+                    <p style="font-size: 25px;" >
+                        Welcome to Great Effort</p>
+                    <h2>
+                    {{a.title}}
+                    </h2>
                 </div>
                 <div class="about-text">
                     
-                    <p>
-                        Great Effort General Contracting LLC is a world-class construction and manpower supply company located in Abu Dhabi, United Arab Emirates. We established in 2008. We focus our corporate ideals “To create a better environment for the nation” while pursuing our business activities with our core strengths of construction and engineering services, and we strive to contribute by developing a safe and comfortable infrastructure and living environment while prospering as and caring for the environment..
-                    </p>
-                    <p>
-                        We have well experienced MEP & Civil workers who have been worked in almost all the major projects in UAE. We are working in UAE from Last 12 Years Successfully.
-                    </p>
+                <p>
+                    {{a.description|safe }}
+                </p>
                     <a class="btn" href="">Learn More</a>
                 </div>
             </div>
+            {% endfor %}
+           
         </div>
     </div>
 </div>

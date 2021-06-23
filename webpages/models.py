@@ -13,7 +13,7 @@ class HeroSlider(models.Model):
 
 class About(models.Model):
     title=models.CharField(max_length=50)
-    description=models.CharField(max_length=300)
+    description=models.CharField(max_length=4000)
     photo= models.ImageField(upload_to='aboutus/')
 
     def __str__(self):
@@ -41,9 +41,16 @@ class Team(models.Model):
 
 
 class Project(models.Model):
+    CATEGORY_CHOICES=(
+        ('completed','completed'),
+        ('running','running'),
+        ('majorprojects','majorprojects'),
+
+    )
     name=models.CharField(max_length=50)
     description=models.CharField(max_length=300)
     photo = models.ImageField(upload_to='projects/')
+    category=models.CharField(max_length=40,choices=CATEGORY_CHOICES,default='completed')
     def __str__(self):
         return self.name
 
@@ -85,3 +92,12 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.title
+
+
+
+class Client(models.Model):
+    companylogo=models.ImageField(upload_to='companylogo/')
+    companyname=models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.companyname
