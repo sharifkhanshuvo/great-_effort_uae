@@ -31,6 +31,8 @@ class Team(models.Model):
     )
     name=models.CharField(max_length=50)
     post=models.CharField(max_length=50)
+    mobileno=models.CharField(max_length=50,default=971544568754)
+    email=models.CharField(max_length=50,default='gegc2010@gmail.com')
     photo=models.ImageField(upload_to='teamimages/')
     teamtype=models.CharField(max_length=50,choices=TEAM_CHOICES)
 
@@ -73,3 +75,13 @@ class Testimonial(models.Model):
 
     def __str__(self):
         return self.personname
+
+
+
+class Blog(models.Model):
+    title=models.CharField(max_length=100)
+    blogbody=models.CharField(max_length=4000)
+    blogthumbnail=models.ImageField(upload_to='blogthumbnail/')
+
+    def __str__(self):
+        return self.title

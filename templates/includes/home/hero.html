@@ -6,32 +6,41 @@
         <li data-target="#carousel" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
+        
+      
+        {% for hero in heroslide %}
+        {% if forloop.first %}
         <div class="carousel-item active">
-            <img src="{% static 'img/carousel-1.jpg' %}" alt="Carousel Image">
+            <img src="{{ hero.photo.url }}" alt="Carousel Image">
             <div class="carousel-caption">
-                <p class="animated fadeInRight">We Are Professional</p>
-                <h1 class="animated fadeInLeft">For Your Dream Project</h1>
-                <a class="btn animated fadeInUp" href="https://htmlcodex.com/construction-company-website-template">Get A Quote</a>
+                <p class="animated fadeInRight">
+                    {{ hero.title }}
+                </p>
+                <h1 class="animated fadeInLeft">
+                    {{hero.subtitle}}
+                </h1>
+                <a class="btn animated fadeInUp" href="{% url 'contact' %}">Get A Quote</a>
             </div>
-        </div>
-
+        </div>    
+        {%  else %}
         <div class="carousel-item">
-            <img src="{% static 'img/carousel-2.jpg' %}"  alt="Carousel Image">
+            <img src="{{ hero.photo.url }}"  alt="Carousel Image">
             <div class="carousel-caption">
-                <p class="animated fadeInRight">Professional Builder</p>
-                <h1 class="animated fadeInLeft">We Build Your Project</h1>
-                <a class="btn animated fadeInUp" href="https://htmlcodex.com/construction-company-website-template">Get A Quote</a>
+                <p class="animated fadeInRight">
+                    {{ hero.title }}
+                </p>
+                <h1 class="animated fadeInLeft">
+                    {{hero.subtitle}}
+                </h1>
+                <a class="btn animated fadeInUp" href="{% url 'contact' %}">Get A Quote</a>
             </div>
         </div>
+    {% endif %}
+        
+        {% endfor %}
+      
 
-        <div class="carousel-item">
-            <img src="{% static 'img/carousel-3.jpg' %}" alt="Carousel Image">
-            <div class="carousel-caption">
-                <p class="animated fadeInRight">We Are Trusted</p>
-                <h1 class="animated fadeInLeft">For Your Dream Project</h1>
-                <a class="btn animated fadeInUp" href="https://htmlcodex.com/construction-company-website-template">Get A Quote</a>
-            </div>
-        </div>
+      
     </div>
 
     <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">

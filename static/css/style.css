@@ -730,6 +730,7 @@ a:focus {
 .service .service-img {
     position: relative;
     overflow: hidden;
+    height: 300px;
 }
 
 .service .service-img img {
@@ -999,7 +1000,7 @@ a:focus {
     color: #ffffff;
 }
 
-.team .team-item:hover .team-social a:first-child {
+/* .team .team-item:hover .team-social a:first-child {
     background: #00acee;
     left: 50px;
     transition: .3s 0s;
@@ -1021,7 +1022,7 @@ a:focus {
     background: #3f729b;
     left: 50px;
     transition: .3s .3s;
-}
+} */
 
 
 /*******************************/
@@ -2234,3 +2235,7 @@ a:focus {
         text-align: center;
     }
 }
+
+
+/* client section */
+

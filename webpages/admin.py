@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import HeroSlider,Service,Testimonial,About,Team,Project
+from .models import HeroSlider,Service,Testimonial,About,Team,Project,Blog
 from django.utils.html import format_html
 # Register your models here.
 
@@ -24,6 +24,8 @@ admin.site.register(Testimonial)
 admin.site.register(About,AboutAdmin)
 admin.site.register(Team)
 admin.site.register(Project)
+admin.site.register(Blog)
+
 
 
 

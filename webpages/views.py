@@ -1,13 +1,27 @@
 from django.shortcuts import render
-
+from .models import HeroSlider,Team,Service
 
 # Create your views here.
 
 def home(request):
+
+    HeroSliders = HeroSlider.objects.all()
+    AdministratorTeams=Team.objects.all().filter(teamtype='administrator')
+    EngineeringTeams=Team.objects.all().filter(teamtype='engineering')
+    MEPService=Service.objects.all().filter(category='mep')
+    ContractingService=Service.objects.all().filter(category='contracting')
+
+    data = {
+        'herosliders':HeroSliders,
+        'EngineeringTeams':EngineeringTeams,
+        'AdministratorTeams':AdministratorTeams,
+        'MEPService':MEPService,
+        'ContractingService':ContractingService
+    }
    
 
 
-    return render(request,'webpages/home.html' )
+    return render(request,'webpages/home.html',data )
 
 
 
@@ -18,7 +32,16 @@ def about(request):
 
 
 def services(request):
-    return render(request, 'webpages/service.html')
+    MEPService=Service.objects.all().filter(category='mep')
+    ContractingService=Service.objects.all().filter(category='contracting')
+
+
+    data  ={
+        'MEPService':MEPService,
+        'ContractingService':ContractingService
+    }
+
+    return render(request, 'webpages/service.html',data)
 
 def portfolio(request):
     return render(request, 'webpages/portfolio.html')

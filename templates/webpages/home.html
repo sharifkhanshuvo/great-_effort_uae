@@ -3,13 +3,18 @@
 
 {% block content %}
 
-{% include 'includes/home/hero.html' %}
+{% include 'includes/home/hero.html' with heroslide=herosliders %}
 {% include 'includes/home/feature.html' %}
 {% include 'includes/home/about.html' %}
 {% include 'includes/home/fact.html' %}
-{% include 'includes/home/service.html' %}
+{% include 'includes/home/clients.html' %}
 
-{% include 'includes/home/team.html' %}
+
+{% include 'includes/home/service.html' with mep=MEPService contracting=ContractingService  %}
+
+{% include 'includes/home/team.html' with engineer=EngineeringTeams adminis=AdministratorTeams %}
+{% include 'includes/home/blog.html' %}
+
 
 
 

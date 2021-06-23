@@ -55,7 +55,8 @@
         time: 2000
     });
     
-    
+
+   
     // Modal Video
     $(document).ready(function () {
         var $videoSrc;
@@ -132,6 +133,7 @@
 
         portfolioIsotope.isotope({filter: $(this).data('filter')});
     });
+
     
 })(jQuery);
 
