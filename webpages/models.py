@@ -1,5 +1,5 @@
 from django.db import models
-
+from ckeditor.fields import RichTextField
 # Create your models here.
 
 class HeroSlider(models.Model):
@@ -87,8 +87,12 @@ class Testimonial(models.Model):
 
 class Blog(models.Model):
     title=models.CharField(max_length=100)
-    blogbody=models.CharField(max_length=4000)
+    blogsubtitle=models.CharField(max_length=2000,default='blog subtitle')
+    blogbody=RichTextField()
     blogthumbnail=models.ImageField(upload_to='blogthumbnail/')
+    blogwriter=models.CharField(max_length=200,default=None)
+    blogwriterinfo=models.CharField(max_length=500,default=None)
+    blogwriterphoto=models.ImageField(upload_to='blogwriterphoto/',default=None)
 
     def __str__(self):
         return self.title

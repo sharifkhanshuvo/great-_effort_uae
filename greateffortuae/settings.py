@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'webpages.apps.WebpagesConfig',
     'cloudinary_storage',
-    'cloudinary'
+    'cloudinary',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [

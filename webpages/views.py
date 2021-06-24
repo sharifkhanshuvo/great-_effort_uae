@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import HeroSlider,Team,Service,About,Client,Project
+from django.shortcuts import render,get_object_or_404
+from .models import HeroSlider,Team,Service,About,Client,Project,Blog
 
 # Create your views here.
 
@@ -12,6 +12,8 @@ def home(request):
     ContractingService=Service.objects.all().filter(category='contracting')
     aboutVar=About.objects.all()
     clients=Client.objects.all()
+    blogsVar=Blog.objects.all()
+
 
     data = {
         'herosliders':HeroSliders,
@@ -20,7 +22,8 @@ def home(request):
         'MEPService':MEPService,
         'ContractingService':ContractingService,
         'aboutVar':aboutVar,
-        'clients':clients
+        'clients':clients,
+        'blogsVar':blogsVar
 
         
     }
@@ -84,4 +87,15 @@ def contact(request):
 
 
 def blogs(request):
-    return render(request, 'webpages/blogs.html')
+    blogsVar=Blog.objects.all()
+    data ={
+        'blogsVar':blogsVar
+    }
+    return render(request, 'webpages/blogs.html',data)
+
+def singleblog(request,id):
+    blog = get_object_or_404(Blog,id=id)
+    data = {
+        'blog':blog
+    }
+    return render(request,'webpages/singleblog.html',data)
