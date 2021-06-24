@@ -1,5 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from datetime import datetime
 # Create your models here.
 
 class HeroSlider(models.Model):
@@ -35,6 +36,7 @@ class Team(models.Model):
     email=models.CharField(max_length=50,default='gegc2010@gmail.com')
     photo=models.ImageField(upload_to='teamimages/')
     teamtype=models.CharField(max_length=50,choices=TEAM_CHOICES)
+    created_date = models.DateTimeField(default=datetime.now, blank=True)
 
     def __str__(self):
         return self.name
