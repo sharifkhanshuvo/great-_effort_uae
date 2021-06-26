@@ -25,7 +25,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="single-content wow fadeInUp">
-                    <img src="{{ blog.blogthumbnail }}" />
+                    <img src="{{ blog.blogthumbnail.url }}" />
                    <p>
                        {{blog.blogbody | safe }}
                    </p>
@@ -33,7 +33,7 @@
                
                 <div class="single-bio wow fadeInUp">
                     <div class="single-bio-img">
-                        <img src="{{ blog.blogwriterphoto }}" />
+                        <img src="{{ blog.blogwriterphoto.url }}" />
                     </div>
                     <div class="single-bio-text">
                         <h3>
