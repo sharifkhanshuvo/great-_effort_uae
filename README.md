@@ -3,6 +3,8 @@
 
 ## Local setup
 
+### Important Note: Dont'for get to change DATABASE Seeting in settings.py file and set DEBUG to True while developing locally
+
 1.Install python from [here](https://www.python.org/downloads/)
 
 2.Install pipenv
