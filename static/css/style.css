@@ -947,6 +947,8 @@ a:focus {
 
 .team .team-img img {
     width: 100%;
+    height: 300px;
+    object-fit: cover;
 }
 
 .team .team-text {
@@ -1246,6 +1248,8 @@ a:focus {
 
 .blog .blog-img img {
     width: 100%;
+    height: 300px;
+    object-fit: cover;
 }
 
 .blog .blog-title {
