@@ -14,7 +14,10 @@
                 <div class="section-header text-left">
                     <p style="font-size: 25px;color: #EACE09
                     ;" >
-                        Welcome to Great Effort</p>
+                        Welcome to Great Effort
+
+                    
+                    </p>
                     <h2>
                     {{a.title}}
                     </h2>
@@ -24,7 +27,9 @@
                 <p>
                     {{a.description|safe }}
                 </p>
-                    <a class="btn" href="">Learn More</a>
+                {% if request.path == '/' %}
+                    <a class="btn" href="{% url 'about' %}">Learn More</a>
+                    {% endif %}
                 </div>
             </div>
             {% endfor %}

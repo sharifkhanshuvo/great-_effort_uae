@@ -11,20 +11,22 @@
 
           <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
               <div class="navbar-nav mr-auto">
-                  <a href="{% url 'home' %}" class="nav-item nav-link active">Home</a>
-                  <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
-                  <a href="{% url 'services' %}"  class="nav-item nav-link">Service</a>
+                  
+                  <a href="{% url 'home' %}" class="nav-item nav-link {% if request.path == '/' %}  active {% endif %} ">Home</a>
+                  <a href="{% url 'about' %}" class="nav-item nav-link {% if request.path == '/about/' %}  active {% endif %} ">About</a>
+                  <a href="{% url 'services' %}"  class="nav-item nav-link {% if request.path == '/services/' %}  active {% endif %} ">Service</a>
                   <!-- <a href="{% url 'team' %}" class="nav-item nav-link">Team</a> -->
-                  <a href="{% url 'portfolio' %}" class="nav-item nav-link">Project</a>
-                  <div class="nav-item dropdown">
-                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Team</a>
-                      <div class="dropdown-menu">
-                          <a href="{% url 'team' %}#administrator" class="dropdown-item">Administrator</a>
-                          <a href="{% url 'team' %}#engineering" class="dropdown-item">Enginerring</a>
+                  <a href="{% url 'portfolio' %}" class="nav-item nav-link {% if request.path == '/portfolio/' %}  active {% endif %} ">Project</a>
+                  <div class="nav-item dropdown  ">
+                      <a href="#" class="nav-link  dropdown-toggle {% if request.path == '/team/' %}  active {% endif %} "  data-toggle="dropdown">Team</a>
+                      <div class="dropdown-menu ">
+                          <a href="{% url 'team' %}#administrator" class="dropdown-item 
+                          ">Administrator</a>
+                          <a href="{% url 'team' %}#engineering" class="dropdown-item ">Enginerring</a>
                       </div>
                   </div>
-                  <a href="{% url 'contact' %}"class="nav-item nav-link">Contact</a>
-                  <a href="{% url 'blogs' %}"class="nav-item nav-link">Blogs</a>
+                  <a href="{% url 'contact' %}"class="nav-item nav-link {% if request.path == '/contact/' %}  active {% endif %} ">Contact</a>
+                  <a href="{% url 'blogs' %}"class="nav-item nav-link {% if request.path == '/blogs/' %}  active {% endif %} ">Blogs</a>
 
               </div>
               <div class="ml-auto">
