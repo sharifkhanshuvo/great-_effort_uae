@@ -7,7 +7,7 @@ def home(request):
 
     HeroSliders = HeroSlider.objects.all()
     AdministratorTeams=Team.objects.order_by('id').filter(teamtype='administrator')
-    EngineeringTeams=Team.objects.order_by('-id').filter(teamtype='engineering')
+    EngineeringTeams=Team.objects.order_by('id').filter(teamtype='engineering')
     MEPService=Service.objects.all().filter(category='mep')
     ContractingService=Service.objects.all().filter(category='contracting')
     aboutVar=About.objects.all()
