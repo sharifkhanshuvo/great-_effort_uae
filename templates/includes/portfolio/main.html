@@ -19,59 +19,115 @@
         <div class="row portfolio-container">
             {% for p in project %}
             {% if p.category == 'completed' %}
+            
             <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item first wow fadeInUp" data-wow-delay="0.1s">
+                <div class="modal fade" id="videoModal-{{p.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body" style="padding:20px 30px;" >
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>        
+                                <!-- 16:9 aspect ratio -->
+                                <div >
+                                <h1>
+                                    {{p.name}}
+                                   
+                                </h1>
+                                <p>
+                                    {{p.description}}
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="portfolio-warp">
                     <div class="portfolio-img">
                         <img src="{{ p.photo.url }}" alt="Image">
-                        <div class="portfolio-overlay">
-                            <p>
-                                {{p.description}}
-                            </p>
-                        </div>
+                       
                     </div>
                     <div class="portfolio-text">
                         <h3>
                             {{p.name}}
                         </h3>
-                        <!-- <a class="btn" href="{% static 'img/portfolio-1.jpg' %}" data-lightbox="portfolio">+</a> -->
+                        <a   class="btn" data-toggle="modal"  data-target="#videoModal-{{p.id}}"  >+</a>
+                      
                     </div>
                 </div>
             </div>
             {% elif p.category == 'running' %}
             <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item second wow fadeInUp" data-wow-delay="0.1s">
+                <div class="modal fade" id="videoModal-{{p.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body" style="padding:20px 30px;" >
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>        
+                                <!-- 16:9 aspect ratio -->
+                                <div >
+                                <h1>
+                                   {{p.name}}
+
+                                </h1>
+                                <p>
+                                    {{p.description}}
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="portfolio-warp">
                     <div class="portfolio-img">
                         <img src="{{ p.photo.url }}" alt="Image">
-                        <div class="portfolio-overlay">
-                            <p>
-                                {{p.description}}
-                            </p>
-                        </div>
+                        
                     </div>
                     <div class="portfolio-text">
                         <h3>
                             {{p.name}}
                         </h3>
-                        <!-- <a class="btn" href="{% static 'img/portfolio-1.jpg' %}" data-lightbox="portfolio">+</a> -->
+                        <a   class="btn" data-toggle="modal"  data-target="#videoModal-{{p.id}}"  >+</a>
+
                     </div>
                 </div>
             </div>
             {% elif p.category == 'majorprojects'   %}
             <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item third wow fadeInUp" data-wow-delay="0.1s">
+                <div class="modal fade" id="videoModal-{{p.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body" style="padding:20px 30px;" >
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>        
+                                <!-- 16:9 aspect ratio -->
+                                <div >
+                                <h1>
+                                    {{p.name}}
+                                    
+
+                                </h1>
+                                <p>
+                                    {{p.description}}
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="portfolio-warp">
                     <div class="portfolio-img">
                         <img src="{{ p.photo.url }}" alt="Image">
-                        <div class="portfolio-overlay">
-                            <p>
-                                {{p.description}}
-                            </p>
-                        </div>
+                     
                     </div>
                     <div class="portfolio-text">
                         <h3>
                             {{p.name}}
                         </h3>
-                        <!-- <a class="btn" href="{% static 'img/portfolio-1.jpg' %}" data-lightbox="portfolio">+</a> -->
+                        <a   class="btn" data-toggle="modal"  data-target="#videoModal-{{p.id}}"  >+</a>
+
                     </div>
                 </div>
             </div>
@@ -84,3 +140,4 @@
     </div>
 </div>
 <!-- Portfolio End -->
+

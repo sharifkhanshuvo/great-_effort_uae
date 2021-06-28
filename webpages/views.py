@@ -1,5 +1,5 @@
 from django.shortcuts import render,get_object_or_404
-from .models import HeroSlider,Team,Service,About,Client,Project,Blog
+from .models import HeroSlider,Team,Service,About,Client,Project,Blog,ExpertWorker,QualityWork,Support
 
 # Create your views here.
 
@@ -13,6 +13,11 @@ def home(request):
     aboutVar=About.objects.all()
     clients=Client.objects.all()
     blogsVar=Blog.objects.all()
+    ExpertWorkerVar=ExpertWorker.objects.all()
+    QualityWorkVar=QualityWork.objects.all()
+    SupportVar=Support.objects.all()
+
+
 
 
     data = {
@@ -23,7 +28,10 @@ def home(request):
         'ContractingService':ContractingService,
         'aboutVar':aboutVar,
         'clients':clients,
-        'blogsVar':blogsVar
+        'blogsVar':blogsVar,
+        'ExpertWorkerVar':ExpertWorkerVar,
+        'QualityWorkVar':QualityWorkVar,
+        'SupportVar':SupportVar
 
         
     }

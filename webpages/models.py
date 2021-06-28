@@ -20,6 +20,20 @@ class About(models.Model):
     def __str__(self):
         return self.title
 
+class ExpertWorker(models.Model):
+    description=models.CharField(max_length=4000)
+    def __str__(self):
+        return 'Expert Worker Description'
+class QualityWork(models.Model):
+    description=models.CharField(max_length=4000)
+    def __str__(self):
+        return 'QualityWork Description'
+
+class Support(models.Model):
+    description=models.CharField(max_length=4000)
+    def __str__(self):
+
+        return 'Support Description'
 
 class Team(models.Model):
     TEAM_CHOICES= (

@@ -8,9 +8,11 @@
                     </div>
                     <div class="feature-text">
                         <h3>Expert Worker</h3>
+                        {% for e in expertworker %}
                         <p>
-                            We have more than 500 Expert workers to fulfill your dreams.
+                            {{e.description}}
                         </p>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -21,9 +23,11 @@
                     </div>
                     <div class="feature-text">
                         <h3>Quality Work</h3>
+                        {% for q in qualitywork %}
                         <p>
-                            We never compromise about quality.Our super experienced Engineer and supervisor will take care of that.
+                            {{q.description}}
                         </p>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
@@ -34,12 +38,15 @@
                     </div>
                     <div class="feature-text">
                         <h3>24/7 Support</h3>
+                        {% for s in support %}
                         <p>
-                            We will provide you 24/7 support
+                            {{s.description}}
                         </p>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
+           
         </div>
     </div>
 </div>

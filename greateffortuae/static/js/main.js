@@ -149,6 +149,6 @@ $('.owl-carousel').owlCarousel({
         portfolioIsotope.isotope({filter: $(this).data('filter')});
     });
 
-    
+
 })(jQuery);
 
