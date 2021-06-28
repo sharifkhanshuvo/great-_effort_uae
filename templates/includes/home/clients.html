@@ -6,13 +6,13 @@
   </div>
   <div class="owl-carousel owl-theme" style="display: block !important;" >
     {% for c in client %}
-    <div class="item text-center mx-auto">
+    <div class="item ">
         <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
           <div class="team-item">
               <div class="team-img">
                   <img src="{{c.companylogo.url}}" style="height: 200px;width: 200px;"  alt="Team Image">
               </div>
-              <div class="team-text  ">
+              <div class="team-text text-center ">
                   <h2 >
                       {{c.companyname}}
                   </h2>

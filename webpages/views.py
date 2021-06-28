@@ -6,8 +6,8 @@ from .models import HeroSlider,Team,Service,About,Client,Project,Blog,ExpertWork
 def home(request):
 
     HeroSliders = HeroSlider.objects.all()
-    AdministratorTeams=Team.objects.order_by('created_date').filter(teamtype='administrator')
-    EngineeringTeams=Team.objects.order_by('created_date').filter(teamtype='engineering')
+    AdministratorTeams=Team.objects.order_by('id').filter(teamtype='administrator')
+    EngineeringTeams=Team.objects.order_by('-id').filter(teamtype='engineering')
     MEPService=Service.objects.all().filter(category='mep')
     ContractingService=Service.objects.all().filter(category='contracting')
     aboutVar=About.objects.all()
