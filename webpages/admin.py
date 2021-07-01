@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import HeroSlider,Service,Testimonial,About,Team,Project,Blog,Client,ExpertWorker,QualityWork,Support
+from .models import HeroSlider,Service,Testimonial,About,Team,Project,Blog,Client,ExpertWorker,QualityWork,Support,AboutMore,ContactForm
 from django.utils.html import format_html
 # Register your models here.
 
@@ -19,6 +19,29 @@ class AboutAdmin(admin.ModelAdmin):
         return False
 
     def has_delete_permission(self, request,obj=None):
+
+        return False
+
+
+
+class AboutMoreAdmin(admin.ModelAdmin):
+
+    def has_add_permission(self, request):
+
+
+
+    # if there's already an entry, do not allow adding
+        count = AboutMore.objects.all().count()
+        if count == 0:
+
+
+
+            return True
+
+        return False
+
+    def has_delete_permission(self, request,obj=None):
+        
 
         return False
 
@@ -97,6 +120,9 @@ admin.site.register(Client)
 admin.site.register(ExpertWorker,ExpertWorkerAdmin)
 admin.site.register(QualityWork,QualityWorkAdmin)
 admin.site.register(Support,SupportAdmin)
+admin.site.register(AboutMore,AboutMoreAdmin)
+admin.site.register(ContactForm)
+
 
 
 

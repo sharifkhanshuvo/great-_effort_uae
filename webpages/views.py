@@ -1,5 +1,5 @@
-from django.shortcuts import render,get_object_or_404
-from .models import HeroSlider,Team,Service,About,Client,Project,Blog,ExpertWorker,QualityWork,Support
+from django.shortcuts import render,get_object_or_404,redirect
+from .models import HeroSlider,Team,Service,About,Client,Project,Blog,ExpertWorker,QualityWork,Support,AboutMore,ContactForm
 
 # Create your views here.
 
@@ -45,7 +45,7 @@ def home(request):
 
 
 def about(request):
-    aboutVar=About.objects.all()
+    aboutVar=AboutMore.objects.all()
     data = {
         
         'aboutVar':aboutVar,
@@ -107,3 +107,25 @@ def singleblog(request,id):
         'blog':blog
     }
     return render(request,'webpages/singleblog.html',data)
+
+
+def contactform(request):
+    print(request.method)
+    if request.method == "POST":
+        name = request.POST['name']
+        email = request.POST['email']
+        subject = request.POST['subject']
+        message = request.POST['message']
+        mobileno=request.POST['mobileno']
+        print(
+            name,
+            email,
+            subject,
+            message,
+            mobileno
+        )
+
+    contacformvar =ContactForm(name=name,email=email,subject=subject,message=message,mobileno=mobileno)
+    contacformvar.save()
+
+    return redirect('contact')

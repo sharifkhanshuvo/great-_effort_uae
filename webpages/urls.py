@@ -11,7 +11,8 @@ urlpatterns =[
     path('team/', views.team, name='team'),
     path('contact/', views.contact,name='contact' ),
     path('blogs/', views.blogs,name='blogs' ),
-    path('blogs/<int:id>/',views.singleblog,name='singleblog')
+    path('blogs/<int:id>/',views.singleblog,name='singleblog'),
+    path('contactform/',views.contactform,name='contactform')
 
 
 

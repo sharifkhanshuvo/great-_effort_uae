@@ -121,3 +121,27 @@ class Client(models.Model):
 
     def __str__(self):
         return self.companyname
+
+
+
+class AboutMore(models.Model):
+    title=models.CharField(max_length=50)
+    description=models.CharField(max_length=4000)
+    photo= models.ImageField(upload_to='aboutmore/')
+
+    def __str__(self):
+        return self.title
+
+
+class ContactForm(models.Model):
+    name=models.CharField(max_length=100)
+    email=models.CharField(max_length=100)
+    mobileno=models.CharField(max_length=100,default=None)
+    subject=models.CharField(max_length=1000)
+    message=models.CharField(max_length=5000)
+
+
+    def __str__(self):
+        return self.name
+
+

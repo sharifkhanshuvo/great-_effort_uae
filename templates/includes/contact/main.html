@@ -1,5 +1,5 @@
-   <!-- Contact Start -->
-   <div class="contact wow fadeInUp">
+  <!-- Contact Start -->
+  <div class="contact wow fadeInUp">
     <div class="container">
         <div class="section-header text-center">
             <p>Get In Touch</p>
@@ -12,15 +12,14 @@
                         <i class="flaticon-address"></i>
                         <div class="contact-text">
                             <h2>Location</h2>
-                            <p>Hamdan Street, Hamdan Centre,
-                                Block-B, Office #204</p>
+                            <p>Hamdan Street, Hamdan Centre, Block-B, Office #204</p>
                         </div>
                     </div>
                     <div class="contact-item">
                         <i class="flaticon-call"></i>
                         <div class="contact-text">
                             <h2>Phone</h2>
-                            <p>0544568754</p>
+                            <p>026420028</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -33,11 +32,42 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <a class="btn" href="mailto:gegc2010@gmail.com">Contact with Email</a>
-                <a class="btn" href="https://api.whatsapp.com/send?phone=971544568754" target="blank" >Contact with Mobile no.</a>
+                <div class="contact-form">
+                    <div id="success"></div>
+                    <form  
+                    method="POST"
+                    action="{% url 'contactform' %}">
+                    {% csrf_token %}
+                    <div class="control-group py-4 ">
+                        <input class="form-control" type="tezt" id="name" name='name' placeholder="your name" required>
+                      
+                    </div>
+                    <div class="control-group py-4">
+                        <input class="form-control" type="email" id="email" name='email' placeholder="your email" required>
+                      
+                    </div>
+                    <div class="control-group py-4 " >
+                        <input class="form-control" id="mobileno" name='mobileno' placeholder="your Mobile number" type="number" required>
+                      
+                    </div>
+                    <div class="control-group py-4">
+                        <input class="form-control" type="text" id="subject" name='subject' placeholder=" subject" required>
+                      
+                    </div>
+                        <div class="control-group py-4">
+                            <textarea class="form-control" id="message" name='message' placeholder="Message" required></textarea>
+                          
+                        </div>
+                        <div>
+                            <button class="btn" type="submit" >Send Message</button>
+                        </div>
+                    </form>
+                    
 
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 <!-- Contact End -->
