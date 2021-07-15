@@ -64,7 +64,7 @@ class Project(models.Model):
 
     )
     name=models.CharField(max_length=50)
-    description=models.CharField(max_length=300)
+    description=models.CharField(max_length=300,default='description')
     photo = models.ImageField(upload_to='projects/')
     category=models.CharField(max_length=40,choices=CATEGORY_CHOICES,default='completed')
     def __str__(self):
@@ -145,3 +145,21 @@ class ContactForm(models.Model):
         return self.name
 
 
+class ExpertWorkerCount(models.Model):
+    count=models.IntegerField()
+    def __str__(self):
+        return 'ExpertWorkerCount'
+class ClientsCount(models.Model):
+    count=models.IntegerField()
+    def __str__(self):
+        return 'ClientsCount'
+
+class CompletedProjectCount(models.Model):
+    count=models.IntegerField()
+    def __str__(self):
+        return 'CompletedProjectCount'
+
+class RunningProjectCount(models.Model):
+    count=models.IntegerField()
+    def __str__(self):
+        return 'ExpertWorkerCount'

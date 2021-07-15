@@ -8,7 +8,12 @@
                             <i class="flaticon-worker"></i>
                         </div>
                         <div class="fact-text">
-                            <h2 data-toggle="counter-up">600</h2>
+                            {% for e in ExpertWorkerCount|slice:":1" %}
+                            <h2 data-toggle="counter-up">
+                                {{ e.count }}
+                            </h2>
+                            {% endfor %}
+                            
                             <p>Expert Workers</p>
                         </div>
                     </div>
@@ -17,7 +22,11 @@
                             <i class="flaticon-building"></i>
                         </div>
                         <div class="fact-text">
-                            <h2 data-toggle="counter-up">113</h2>
+                            {% for c in ClientsCount|slice:":1" %}
+                            <h2 data-toggle="counter-up">
+                                {{ c.count }}
+                            </h2>
+                            {% endfor %}
                             <p>Happy Clients</p>
                         </div>
                     </div>
@@ -30,7 +39,11 @@
                             <i class="flaticon-address"></i>
                         </div>
                         <div class="fact-text">
-                            <h2 data-toggle="counter-up">315</h2>
+                            {% for co in CompletedProjectCount|slice:":1" %}
+                            <h2 data-toggle="counter-up">
+                                {{ co.count }}
+                            </h2>
+                            {% endfor %}
                             <p>Completed Projects</p>
                         </div>
                     </div>
@@ -39,7 +52,11 @@
                             <i class="flaticon-crane"></i>
                         </div>
                         <div class="fact-text">
-                            <h2 data-toggle="counter-up">12</h2>
+                            {% for r in RunningProjectCount|slice:":1" %}
+                            <h2 data-toggle="counter-up">
+                                {{ r.count }}
+                            </h2>
+                            {% endfor %}
                             <p>Running Projects</p>
                         </div>
                     </div>

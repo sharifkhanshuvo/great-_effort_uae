@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import HeroSlider,Service,Testimonial,About,Team,Project,Blog,Client,ExpertWorker,QualityWork,Support,AboutMore,ContactForm
+from .models import HeroSlider,Service,Testimonial,About,Team,Project,Blog,Client,ExpertWorker,QualityWork,Support,AboutMore,ContactForm,ExpertWorkerCount,ClientsCount,CompletedProjectCount,RunningProjectCount
 from django.utils.html import format_html
 # Register your models here.
 
@@ -109,6 +109,89 @@ class SupportAdmin(admin.ModelAdmin):
         return False
 
 
+class ExpertWorkerCountAdmin(admin.ModelAdmin):
+
+    def has_add_permission(self, request):
+
+
+
+    # if there's already an entry, do not allow adding
+        count = ExpertWorkerCount.objects.all().count()
+        if count == 0:
+
+
+
+            return True
+
+        return False
+
+    def has_delete_permission(self, request,obj=None):
+
+        return False
+
+class ClientsCountAdmin(admin.ModelAdmin):
+
+    def has_add_permission(self, request):
+
+
+
+    # if there's already an entry, do not allow adding
+        count = ClientsCount.objects.all().count()
+        if count == 0:
+
+
+
+            return True
+
+        return False
+
+    def has_delete_permission(self, request,obj=None):
+
+        return False
+
+
+class CompletedProjectCountAdmin(admin.ModelAdmin):
+
+    def has_add_permission(self, request):
+
+
+
+    # if there's already an entry, do not allow adding
+        count = CompletedProjectCount.objects.all().count()
+        if count == 0:
+
+
+
+            return True
+
+        return False
+
+    def has_delete_permission(self, request,obj=None):
+
+        return False
+
+class RunningProjectCountAdmin(admin.ModelAdmin):
+
+    def has_add_permission(self, request):
+
+
+
+    # if there's already an entry, do not allow adding
+        count = RunningProjectCount.objects.all().count()
+        if count == 0:
+
+
+
+            return True
+
+        return False
+
+    def has_delete_permission(self, request,obj=None):
+
+        return False
+
+
+
 admin.site.register(HeroSlider)
 admin.site.register(Service)
 admin.site.register(Testimonial)
@@ -122,6 +205,11 @@ admin.site.register(QualityWork,QualityWorkAdmin)
 admin.site.register(Support,SupportAdmin)
 admin.site.register(AboutMore,AboutMoreAdmin)
 admin.site.register(ContactForm)
+admin.site.register(ExpertWorkerCount,ExpertWorkerCountAdmin)
+admin.site.register(ClientsCount,ClientsCountAdmin)
+admin.site.register(CompletedProjectCount,CompletedProjectCountAdmin)
+admin.site.register(RunningProjectCount,RunningProjectCountAdmin)
+
 
 
 

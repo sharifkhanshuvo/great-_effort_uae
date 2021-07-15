@@ -1,5 +1,5 @@
 from django.shortcuts import render,get_object_or_404,redirect
-from .models import HeroSlider,Team,Service,About,Client,Project,Blog,ExpertWorker,QualityWork,Support,AboutMore,ContactForm
+from .models import HeroSlider,Team,Service,About,Client,Project,Blog,ExpertWorker,QualityWork,Support,AboutMore,ContactForm,ExpertWorkerCount,ClientsCount,CompletedProjectCount,RunningProjectCount
 
 # Create your views here.
 
@@ -16,6 +16,10 @@ def home(request):
     ExpertWorkerVar=ExpertWorker.objects.all()
     QualityWorkVar=QualityWork.objects.all()
     SupportVar=Support.objects.all()
+    ExpertWorkerCountVar=ExpertWorkerCount.objects.all()
+    ClientsCountVar=ClientsCount.objects.all()
+    CompletedProjectCountVar=CompletedProjectCount.objects.all()
+    RunningProjectCountVar=RunningProjectCount.objects.all()
 
 
 
@@ -31,7 +35,11 @@ def home(request):
         'blogsVar':blogsVar,
         'ExpertWorkerVar':ExpertWorkerVar,
         'QualityWorkVar':QualityWorkVar,
-        'SupportVar':SupportVar
+        'SupportVar':SupportVar,
+        'ExpertWorkerCountVar':ExpertWorkerCountVar,
+        'ClientsCountVar':ClientsCountVar,
+        'CompletedProjectCountVar':CompletedProjectCountVar,
+        'RunningProjectCountVar':RunningProjectCountVar
 
         
     }

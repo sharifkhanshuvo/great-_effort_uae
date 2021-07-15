@@ -6,7 +6,7 @@
 {% include 'includes/home/hero.html' with heroslide=herosliders %}
 {% include 'includes/home/feature.html' with expertworker=ExpertWorkerVar qualitywork=QualityWorkVar support=SupportVar %}
 {% include 'includes/home/about.html' with about=aboutVar %}
-{% include 'includes/home/fact.html' %}
+{% include 'includes/home/fact.html' with ExpertWorkerCount=ExpertWorkerCountVar ClientsCount=ClientsCountVar CompletedProjectCount=CompletedProjectCountVar  RunningProjectCount=RunningProjectCountVar %}
 {% include 'includes/home/clients.html' with client=clients %}
 
 
